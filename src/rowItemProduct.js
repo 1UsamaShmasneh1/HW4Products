@@ -12,7 +12,10 @@ export default class RowItemProduct extends React.Component {
 
         return (
             <tr className="table-active"  >
-                <td style={styleStocked}>{product.name}</td>
+                <td style={styleStocked}>
+                        {product.name}
+                        {!product.stocked && <button type="submit">Save</button>}
+                </td>
                 <td>{product.price}</td>
             </tr>
         );
