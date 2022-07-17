@@ -14,10 +14,13 @@ export default class RowItemProduct extends React.Component {
             <tr className="table-active"  >
                 <td style={styleStocked}>
                         {product.name}
-                        {!product.stocked && <button type="submit">Save</button>}
+                        {!product.stocked && <button onClick={this.handleDelete}>Delete</button>}
                 </td>
                 <td>{product.price}</td>
             </tr>
         );
+
     }
+
+    handleDelete = () => this.props.onDelete(this.state.props.product.name)
 }

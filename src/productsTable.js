@@ -29,6 +29,7 @@ export default class ProductsTable extends React.Component {
                 <RowItemProduct
                     product={product}
                     key={product.name}
+                    onDelete={this.handleDelete}
                 />
             );
             lastCategory = product.category;
@@ -46,4 +47,6 @@ export default class ProductsTable extends React.Component {
             </table>
         );
     }
+
+    handleDelete = (pName) => this.props.onDelete(pName)
 }

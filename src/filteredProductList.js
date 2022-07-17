@@ -46,7 +46,8 @@ export default class FilteredProductList extends Component {
                     products={this.state.products}
                     filterText={this.state.filterText}
                     inStockOnly={this.state.inStockOnly} 
-                    sortValue={this.state.sortValue} />
+                    sortValue={this.state.sortValue}
+                    onDelete={this.handleDelete} />
             </div>
         )
     }
@@ -68,5 +69,5 @@ export default class FilteredProductList extends Component {
 
     categoryChange = (categoryValue) => this.setState({products: [...productsData].filter((p) => categoryValue === p.category), categoryValue: categoryValue})
 
-
+    handleDelete = (pName) => this.setState({products: [...this.state.products].filter((p) => pName !== p.name)})
 }
